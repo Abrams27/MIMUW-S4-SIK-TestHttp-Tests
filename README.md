@@ -32,6 +32,37 @@ Powinien budowac test do `.o` i obslugiwac `make clean`
 Ma on budowac juz test, w nim trzeba, jesli sie ma (powinno sie miec xd) jakies moduly ktorych uzywacie w implementacji tego testu
 (mozna sie na moim przykladzie wzorowac)
 
+# Uruchamianie
+wystarczy:
+```
+./runDockerTests.sh
+```
+
+Pierwsze odpalenie bedzie sie dluzej odpalalo, bo bedzie budowalo obraz z potrzebnymi bibliotekami, pozniejsze juz nie beda musialy tego robic (chyba ze podbije wersje) i powinny szybko sie odpalac.
+
+## Jesli uzywasz dziwnych bibliotek:
+Aktualnie zainstalowane na obrazie sa:
+```
+gcc
+make
+glibc-devel
+diffutils
+```
+
+Jesli chcesz inne to wystarczy dodac w `docker-test/Dockerfile`
+```
+RUN poldek --shcmd="install <nazwa biblioteki>"
+```
+
+i w `docker-test/build/buildBaseDockerImage.sh` podbic pole
+```
+BASE_IMAGE_VERSION="1_0"
+```
+np na
+```
+BASE_IMAGE_VERSION="1_1"
+```
+
 # Testy:
 ## wersja 1.0:
 <b>Base image tag: 1_0</b>
