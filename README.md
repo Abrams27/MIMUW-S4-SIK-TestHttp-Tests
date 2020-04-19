@@ -1,5 +1,5 @@
 # MIMUW-S4-SIK-TestHttp-Tests
-Testy jednostkowo-integracyjne do zadania z siku TestHttp-tests
+Testy jednostkowo-integracyjne do zadania z siku TestHttp-tests, raczej dla ludzi ktorzy dopiero zaczeli, albo chca zaczac i nie wiedza od czego to klepac.
 
 # Ogolnie
 Sa to testy, ktore testuja poszczegolne czesci rozwiazania. Uzycie ich pewnie wymaga odrobinke poswiecenia, zeby zaimplementowac interface'y i poprawic jakies makefile, jednak jak sie juz przez to przebrnie to kodzenie jest raczej przyjemniejsze i daje jakas namiastke TDD. Co do formy itp, to nie umiem C i nie chce umiec C, jest to zbitka jakis moich pomyslow, z braku frameworkow zrobilem to tak, a nie inaczej, jesli sie zrobi dokladnie to co napisze to raczej nie ma potrzeby zaglebiac sie w szczegoly rozwiazania. Z racji ze mam macbooka i w uklonie do innych posiadaczy odpala to sie wyszstko na obrazie dockerowym z systemem takim co posiada students. <b>Tak, macbook i tak jest fajny, to C jest niefajne.</b>
