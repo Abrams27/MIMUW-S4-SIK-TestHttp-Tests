@@ -22,7 +22,7 @@ Jak juz mowilem nie umiem w c i nie chce umiec, wiec testy raczej maja forme imp
 Powinny one zostac zaimplementowane oczywiscie w `solve/src/test/c/`, includowac moj interface i go implementowac.
 
 ## Popraw `makefile` w `solve/`
-Powinien on budowac cale rozwiazanie (`testhttp_raw`) i pewnie jakies moduly uzywane w rozwiazaniu (do `.o`), ktore pozniej wlasnie mozna dolaczyc do tego ostatniedo `makefile`
+Powinien on budowac cale rozwiazanie (`testhttp_raw`) i obslugiwac `make clean` i pewnie jakies moduly uzywane w rozwiazaniu (do `.o`), ktore pozniej wlasnie mozna dolaczyc do tego ostatniego `makefile`
 
 ## Popraw `makefile` w `solve/src/test/`
 Powinien budowac test do `.o` i obslugiwac `make clean`
