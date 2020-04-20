@@ -98,6 +98,8 @@ rozumiem ze to jest np:
 ```
 HTTP/1.1 404 Not Found
 ```
+### wersja 1.1:
+Headery koncza sie CRLF i dodanie id testu w raporcie.
 
 ## wersja 2.0:
 Planowane jakos jutro wieczorem, czytanie responsa dla `200 OK` i moze cos jeszcze
