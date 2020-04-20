@@ -26,13 +26,13 @@ echo -e "CREATING REPORT FOR RESPONSE TESTS"
 echo -e "=================================="
 
 ./response_resolver_test 1 > ${RESOURCES_PATH}/out
-update_counters 1 "one part response"
+update_counters 1 "one part response (id: 1)"
 
 ./response_resolver_test 2 > ${RESOURCES_PATH}/out
-update_counters 2 "big parts response"
+update_counters 2 "big parts response (id: 2)"
 
 ./response_resolver_test 3 > ${RESOURCES_PATH}/out
-update_counters 3 "small parts response"
+update_counters 3 "small parts response (id: 3)"
 
 echo -e "Passed: ${PASSED_TESTS} / ${ALL_TESTS}"
 echo -e "==================================\n"
