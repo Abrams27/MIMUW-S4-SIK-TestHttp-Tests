@@ -6,8 +6,7 @@ LDFLAGS =
 
 all: response_resolver_test
 
-# tutaj na koniec mozna dodac swoje .o
-response_resolver_test: response_resolver_test_impl.o ../solve/src/test/response_resolver_test.o
+response_resolver_test: response_resolver_test_impl.o ../solve/src/test/response_resolver_test.o ../solve/response_resolver.o ../solve/logger.o ../solve/safe_memory.o ../solve/string_buffer.o ../solve/buffered_reader.o ../solve/tcp_client.o
 	$(CC) $(LDFLAGS) -o $@ $^
 
 response_resolver_test_impl.o: src/test/c/response_resolver_test_impl.c src/test/c/interfaces/response_resolver_test.h

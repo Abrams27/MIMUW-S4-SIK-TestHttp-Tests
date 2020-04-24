@@ -21,18 +21,24 @@ function update_counters() {
   ((ALL_TESTS++))
 }
 
+function run_test() {
+  ./response_resolver_test $1 > ${RESOURCES_PATH}/out
+  update_counters $1 "$2"
+}
+
 echo -e "=================================="
 echo -e "CREATING REPORT FOR RESPONSE TESTS"
 echo -e "=================================="
 
-./response_resolver_test 1 > ${RESOURCES_PATH}/out
-update_counters 1 "one part response (id: 1)"
-
-./response_resolver_test 2 > ${RESOURCES_PATH}/out
-update_counters 2 "big parts response (id: 2)"
-
-./response_resolver_test 3 > ${RESOURCES_PATH}/out
-update_counters 3 "small parts response (id: 3)"
+run_test 1 "one part response 404 (id: 1)"
+run_test 2 "big parts response 404 (id: 2)"
+run_test 3 "small parts response 404 (id: 3)"
+run_test 4 "one part response 200 (id: 4)"
+run_test 5 "big parts response 200 (id: 5)"
+run_test 6 "one part response 200, tricky cookies (id: 6)"
+run_test 7 "one part response 200, tricky response size (id: 7)"
+run_test 8 "one part response 200, chunked (id: 8)"
+run_test 9 "big parts response 200, chunked (id: 9)"
 
 echo -e "Passed: ${PASSED_TESTS} / ${ALL_TESTS}"
 echo -e "==================================\n"
