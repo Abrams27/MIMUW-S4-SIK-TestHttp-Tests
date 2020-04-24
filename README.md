@@ -102,7 +102,27 @@ HTTP/1.1 404 Not Found
 Headery koncza sie CRLF i dodanie id testu w raporcie.
 
 ## wersja 2.0:
-Planowane jakos jutro wieczorem, czytanie responsa dla `200 OK` i moze cos jeszcze
+<b>Base image tag: 1_0</b>
+
+<b>Test image tag: 2_0</b>
+
+### Testy na parsowanie responsa z serwera z kodem `200 OK`
+Inteface: 
+`docker-test/src/test/c/interfaces/response_resolver_test.h`
+
+(taki sam jak wyzej)
+Medota:
+```
+void report_for_response_test(char **response_parts, size_t number_of_response_parts, size_t response_part_size);
+```
+
+- `char **response_parts` tablica stringow z kawalkami odpowiedzi
+- `size_t number_of_response_parts` liczba tych kawalkow
+- `size_t response_part_size` rozmiar pojedynczego kawalka (w sumie nie polecam sie zapinac jakos na sztywno z tym)
+
+(taka sama jak wyzej)
+
+Medota symuluje dostawanie responsa w kawalkach ktore bedzie zwracal read na polaczeniu, powinna po prostu wypisac raport zgodnie z trescia zadania 
 
 
 # Siema jestem abrams i jak cos to sie pytajcie
