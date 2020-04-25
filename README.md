@@ -124,8 +124,36 @@ void report_for_response_test(char **response_parts, size_t number_of_response_p
 
 Medota symuluje dostawanie responsa w kawalkach ktore bedzie zwracal read na polaczeniu, powinna po prostu wypisac raport zgodnie z trescia zadania 
 
+## wersja 3.0:
+<b>Base image tag: 1_0</b>
 
-# Siema jestem abrams i jak cos to sie pytajcie
+<b>Test image tag: 3_0</b>
 
+### Testy na wysylanie requesta 
+Inteface: 
+`docker-test/src/test/c/interfaces/request_resolver_test.h`
 
+Medota:
+```
+void send_request_test(const char *address, const char *file_name);
+```
 
+- `const char *address` string z adresem (argv[3])
+- `const char *file_name` nazwa pliku z cookies do wyslania
+
+Medota symuluje dostawanie wysylanie requesta, wystraczy wypisac na standardowe wyjscie requesta (w fprintf podmienic `File *` na `stdout`
+
+zakladam ze powinny byc headery:
+```
+Host: <host>
+User-Agent: testhttp_raw
+Connection: close
+Cookie: key=value
+...
+```
+
+### Testy na argumenty programu sprawdzaja istnienie pliku z cookies i testuja walidowanie portu
+Takie jak wyzej, wiecej przypadkow na podstawie forum
+
+## wersja 4.0
+Planowana na jutro, test calego i valgrind
