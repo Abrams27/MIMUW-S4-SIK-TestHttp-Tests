@@ -14,6 +14,10 @@ void test_for_200_one_part_id_7();
 void test_for_200_one_part_chunked_id_8();
 void test_for_200_big_parts_chunked_id_9();
 
+void test_for_200_headers_id_10();
+void test_for_200_chunked_tricky_header_id_11();
+
+
 void run_test(const char **response_parts, size_t number_of_response_parts, size_t response_part_size);
 
 int main(int argc, char *argv[]) {
@@ -46,6 +50,12 @@ int main(int argc, char *argv[]) {
       break;
     case 9:
       test_for_200_big_parts_chunked_id_9();
+      break;
+    case 10:
+      test_for_200_headers_id_10();
+      break;
+    case 11:
+      test_for_200_chunked_tricky_header_id_11();
       break;
     default:
       break;
@@ -217,6 +227,48 @@ void test_for_200_big_parts_chunked_id_9() {
 
   const size_t number_of_response_parts = 3;
   const size_t response_part_size = 64;
+
+  run_test(HTTP_RESPONSE, number_of_response_parts, response_part_size);
+}
+
+void test_for_200_headers_id_10() {
+  const char *HTTP_RESPONSE[] = {
+    "HTTP/1.1 200 OK\r\n"
+    "Date: Sun, 18 Oct 2012 10:36:20 GMT\r\n"
+    "Server: Apache/2.2.14 (Win32)\r\n"
+    "seT-cOoKie: cookie21=37\r\n"
+    "\r\n"
+  };
+
+  const size_t number_of_response_parts = 1;
+  const size_t response_part_size = strlen(HTTP_RESPONSE[0]);
+
+  run_test(HTTP_RESPONSE, number_of_response_parts, response_part_size);
+}
+
+void test_for_200_chunked_tricky_header_id_11() {
+  const char *HTTP_RESPONSE[] = {
+    "HTTP/1.1 200 OK\r\n"
+    "Date: Sun, 18 Oct 2012 10:36:20 GMT\r\n"
+    "Server: Apache/2.2.14 (Win32)\r\n"
+    "Set-Cookie: cookie21=37\r\n"
+    "transfer-encoding: gzip, chunked\r\n"
+    "Set-Cookie: cookie18=22; cookie18=69\r\n"
+    "\r\n"
+    "4\r\n"
+    "Wiki\r\n"
+    "5\r\n"
+    "pedia\r\n"
+    "E\r\n"
+    " in\r\n"
+    "\r\n"
+    "chunks.\r\n"
+    "0\r\n"
+    "\r\n"
+  };
+
+  const size_t number_of_response_parts = 1;
+  const size_t response_part_size = strlen(HTTP_RESPONSE[0]);
 
   run_test(HTTP_RESPONSE, number_of_response_parts, response_part_size);
 }

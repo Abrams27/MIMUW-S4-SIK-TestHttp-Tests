@@ -18,6 +18,9 @@ update_counters 0
 ./src/test/bash/response_resolver_test.sh
 update_counters 0
 
+./src/test/bash/request_resolver_test.sh
+update_counters 0
+
 echo -e "\n=================================="
 echo -e "Passed all: ${PASSED_TESTS} / ${ALL_TESTS}"
 echo -e "==================================\n"

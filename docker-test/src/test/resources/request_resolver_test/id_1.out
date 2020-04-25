@@ -1,0 +1,7 @@
+GET /plik HTTP/1.1
+Host: www.mimuw.edu.pl:8080
+User-Agent: testhttp_raw
+Connection: close
+Cookie: ciasteczko1=hej
+Cookie: ciasteczko2=wszystkim
+
