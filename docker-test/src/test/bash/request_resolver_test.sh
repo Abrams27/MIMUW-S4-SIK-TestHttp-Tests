@@ -27,7 +27,7 @@ function run_test() {
 }
 
 echo -e "=================================="
-echo -e "CREATING REPORT FOR RESPONSE TESTS"
+echo -e "CREATING REQUEST TESTS"
 echo -e "=================================="
 
 run_test 1 "(id: 1)"
