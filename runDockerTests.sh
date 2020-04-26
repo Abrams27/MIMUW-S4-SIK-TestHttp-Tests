@@ -3,7 +3,7 @@
 BASE_IMAGE_VERSION="1_0"
 BASE_IMAGE_NAME="mimuw.sik.abrams/pld-linux-libs"
 
-IMAGE_VERSION="3_0"
+IMAGE_VERSION="3_1"
 IMAGE_NAME="mimuw.sik.abrams/testhttp-tests"
 
 echo -e "SPRAWDZANIE CZY TRZEBA BUDOWAC OBRAZ BAZOWY\n\n"

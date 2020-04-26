@@ -225,7 +225,7 @@ void test_for_200_big_parts_chunked_id_9() {
     "\r\n"
   };
 
-  const size_t number_of_response_parts = 3;
+  const size_t number_of_response_parts = 4;
   const size_t response_part_size = 64;
 
   run_test(HTTP_RESPONSE, number_of_response_parts, response_part_size);
