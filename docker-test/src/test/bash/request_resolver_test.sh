@@ -35,6 +35,8 @@ run_test 2 "(id: 2)"
 run_test 3 "(id: 3)"
 run_test 4 "(id: 4)"
 run_test 5 "(id: 5)"
+run_test 6 "(id: 6)"
+run_test 7 "(id: 7)"
 
 echo -e "Passed: ${PASSED_TESTS} / ${ALL_TESTS}"
 echo -e "==================================\n"

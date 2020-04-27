@@ -7,6 +7,8 @@ void test_2();
 void test_3();
 void test_4();
 void test_5();
+void test_6();
+void test_7();
 
 int main(int argc, char *argv[]) {
   int test_id = argc > 1 ? atoi(argv[1]) : 0;
@@ -26,6 +28,12 @@ int main(int argc, char *argv[]) {
       break;
     case 5:
       test_5();
+      break;
+    case 6:
+      test_6();
+      break;
+    case 7:
+      test_7();
       break;
     default:
       break;
@@ -52,4 +60,12 @@ void test_4() {
 
 void test_5() {
   send_request_test("http://www.mimuw.edu.pl:8080/plik", "src/test/resources/cookies/ciasteczka_test_3.txt");
+}
+
+void test_6() {
+  send_request_test("http://www.mimuw.edu.pl:8080#plik", "src/test/resources/cookies/ciasteczka_test_3.txt");
+}
+
+void test_7() {
+  send_request_test("http://www.mimuw.edu.pl:8080?plik=2137", "src/test/resources/cookies/ciasteczka_test_3.txt");
 }
