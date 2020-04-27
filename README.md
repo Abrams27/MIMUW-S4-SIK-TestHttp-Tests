@@ -156,4 +156,9 @@ Cookie: key=value
 Takie jak wyzej, wiecej przypadkow na podstawie forum
 
 ## wersja 4.0
-Planowana na jutro, test calego i valgrind
+<b>Base image tag: 1_0</b>
+
+<b>Test image tag: 3_0</b>
+
+
+Nowe testy do requesta, ciastka tylko w jednej linii oraz znaki # i ? w urlu
